@@ -1,11 +1,10 @@
-import express from 'express';
+import express from "express";
 const app = express();
-import logging from './startup/logging.js';
-import routes from './startup/routes.js';
-import db from './startup/db.js';
-import config from './startup/config.js';
-import validation from './startup/validateion.js';
-import winston from 'winston';
+import logging from "./startup/logging.js";
+import routes from "./startup/routes.js";
+import db from "./startup/db.js";
+import config from "./startup/config.js";
+import validation from "./startup/validation.js";
 
 logging();
 db();

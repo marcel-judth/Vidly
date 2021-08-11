@@ -1,10 +1,10 @@
-import mongoose from 'mongoose';
-import winston from 'winston';
-import config from 'config';
+import mongoose from "mongoose";
+import winston from "winston";
+import config from "config";
 
-export default function () {
-  const db = config.get('db');
-  mongoose
+export default async function () {
+  const db = config.get("db");
+  await mongoose
     .connect(db, {
       useNewUrlParser: true,
       useUnifiedTopology: true,

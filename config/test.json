@@ -1,4 +1,4 @@
 {
   "jwtPrivateKey": "test",
-  "db": ""
+  "db": "mongodb+srv://user_test:XhrA4XirU8tgwlkP@cluster0.uylpq.mongodb.net/TestDB?retryWrites=true&w=majority"
 }

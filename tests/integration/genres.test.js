@@ -1,20 +1,29 @@
-const request = require('supertest');
+const mongoose = require("mongoose");
+const request = require("supertest");
 
 let server;
 
-describe('/api/genres', () => {
+describe("/api/genres", () => {
   beforeEach(() => {
-    server = require('../../index');
-    console.log(server);
+    server = require("../../index");
   });
 
-  afterEach(() => {
-    server.close();
+  afterEach((done) => {
+    return server.close(done);
+
+    // Mongoose.connections.forEach(async (con) => {
+    //   await con.close();
+    // });
+
+    // await mongoose.disconnect();
+  });
+  afterAll(async () => {
+    await mongoose.connection.close();
   });
 
-  describe('GET /', () => {
-    it('should return all genres', async () => {
-      const res = await request(server).get('/api/genres');
+  describe("GET /", () => {
+    it("should return all genres", async () => {
+      const res = await request(server).get("/api/genres");
       expect(res.status).toBe(200);
     });
   });
